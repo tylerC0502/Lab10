@@ -40,10 +40,11 @@ public class Timer {
 		} catch (InterruptedException e) {
 			logger.severe("InterruptedException rised");
 			throw new TimerException("Sleep exception", e);
-		} finally {
-			logger.info("Calling took: "+ (System.currentTimeMillis() - timeNow));
-			logger.info("* should take: "+ timeToWait);
 		}
+
+		logger.info("Calling took: "+ (System.currentTimeMillis() - timeNow));
+		logger.info("* should take: "+ timeToWait);
+
 		return timeNow;
 	}
 }
